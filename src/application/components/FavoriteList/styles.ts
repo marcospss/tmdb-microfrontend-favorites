@@ -27,6 +27,16 @@ export const Container = styled.div`
   border-radius: 1rem;
 `;
 
+export const EmptyList = styled.div`
+  background-color: #0906ff;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 5rem;
+  color: #fff;
+  font-size: 1.5rem;
+`;
+
 export const GridList = styled.div`
   display: grid;
   grid-template-columns: 1fr;

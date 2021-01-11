@@ -19,18 +19,18 @@ type CardProps = {
 
 const CardPosterDescription = ({ mediaId, posterPath, title, overview, mediaType, hideOverflowTitle }: CardProps): JSX.Element => {
   const { secure_base_url, poster_sizes } = imageApi;
-  const Processedtitle = title.length > 27 && hideOverflowTitle ? `${title.substring(0, 26)}...` : title;
+  const processedTitle = title.length > 27 && hideOverflowTitle ? `${title.substring(0, 26)}...` : title;
   const removeToFavorites = useFavoriteStore(store => store.actions.remove);
 
   return (
     <Card>
       <Title title={title}>
-        <Link to={`/${mediaType}/${mediaId}`}>{Processedtitle}</Link>
+        <Link to={`/${mediaType}/${mediaId}`}>{processedTitle}</Link>
       </Title>
       <Content>
         <Poster>
           {posterPath ? (
-            <Link to={`/${mediaType}/${mediaId}`}>
+            <Link to={`/details/${mediaId}`}>
               <img src={`${secure_base_url}${poster_sizes.w92}${posterPath}`} alt={title} />
             </Link>
           ) : (
