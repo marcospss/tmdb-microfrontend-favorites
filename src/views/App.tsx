@@ -22,7 +22,6 @@ const App = (): JSX.Element => {
   useEffect(() => {
     setLocalFavorites(favorites);
   }, []);
-
   const renderFavoritesListOrMessage = () => {
     if (localFavorites.length === 0) {
       return <h4>No Favorites</h4>;
@@ -38,7 +37,7 @@ const App = (): JSX.Element => {
   return (
     <Wrapper>
       <div>
-        <h1>Favorites</h1>
+        <h1>Favorites { process.env.NAME_APPLICATION }</h1>
         {renderFavoritesListOrMessage()}
       </div>
 
